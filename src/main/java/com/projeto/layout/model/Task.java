@@ -1,22 +1,27 @@
 package com.projeto.layout.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
-public class taks {
+public class Task {
 
-    public taks(Long id, String name, Date date) {
+    public Task(Long id, String name, Date date) {
         this.id = id;
         this.name = name;
         this.date = date;
     }
 
-    public taks() {
+    public Task() {
 
     }
 
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // <- Adicione isso aqui
+    private Date date;
+
     private Long id;
     private String name;
-    private Date date;
 
 
     public Long getId() {
